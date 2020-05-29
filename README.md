@@ -2,7 +2,7 @@
 ### Project 3 in Udacity Deep Learning Nanodegree
 Do you love Seinfield and wish it never ended. Check out this repo to create your own scipt for Seinfield made with :heart in Pytorch. Please spread some love and laughter and do :star2: the project. Cheers!
 To check out the Project, use any of these links:
-1. [Markdown](https://github.com/phreakyphoenix/TV-Script-Generation-DLND-P3/README.md) 
+1. [Markdown](https://github.com/phreakyphoenix/TV-Script-Generation-DLND-P3/blob/master/README.md) 
 2. [IPYNB](https://github.com/phreakyphoenix/TV-Script-Generation-DLND-P3/blob/master/dlnd_tv_script_generation.ipynb)
 3. [HTML](https://github.com/phreakyphoenix/TV-Script-Generation-DLND-P3/blob/master/dlnd_tv_script_generation.html)  
 
