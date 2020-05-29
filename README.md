@@ -2,9 +2,9 @@
 ### Project 3 in Udacity Deep Learning Nanodegree
 Do you love Seinfield and wish it never ended. Check out this repo to create your own scipt for Seinfield made with :heart in Pytorch. Please spread some love and laughter and do :star2: the project. Cheers!
 To check out the Project, use any of these links:
-1. [Markdown](https://github.com/phreakyphoenix/TV-Script-Generation-DLND-P3/blob/master/README.md) 
-2. [IPYNB](https://github.com/phreakyphoenix/TV-Script-Generation-DLND-P3/blob/master/dlnd_tv_script_generation.ipynb)
-3. [HTML](https://github.com/phreakyphoenix/TV-Script-Generation-DLND-P3/blob/master/dlnd_tv_script_generation.html)  
+1. [Markdown](https://github.com/phreakyphoenix/TV-Script-Generation/blob/master/README.md) 
+2. [IPYNB](https://github.com/phreakyphoenix/TV-Script-Generation/blob/master/dlnd_tv_script_generation.ipynb)
+3. [HTML](https://github.com/phreakyphoenix/TV-Script-Generation/blob/master/dlnd_tv_script_generation.html)  
 
 In this project, you'll generate your own [Seinfeld](https://en.wikipedia.org/wiki/Seinfeld) TV scripts using RNNs.  You'll be using part of the [Seinfeld dataset](https://www.kaggle.com/thec03u5/seinfeld-chronicles#scripts.csv) of scripts from 9 seasons.  The Neural Network you'll build will generate a new ,"fake" TV script, based on patterns it recognizes in this training data.
 
@@ -30,7 +30,6 @@ text = helper.load_data(data_dir)
 ## Explore the Data
 Play around with `view_line_range` to view different parts of the data. This will give you a sense of the data you'll be working with. You can see, for example, that it is all lowercase text, and each new line of dialogue is separated by a newline character `\n`.
 
-
 ```python
 view_line_range = (0, 10)
 import numpy as np
@@ -43,7 +42,7 @@ print('Number of lines: {}'.format(len(lines)))
 word_count_line = [len(line.split()) for line in lines]
 print('Average number of words in each line: {}'.format(np.average(word_count_line)))
 
-print()
+print()F
 print('The lines {} to {}:'.format(*view_line_range))
 print('\n'.join(text.split('\n')[view_line_range[0]:view_line_range[1]]))
 ```
