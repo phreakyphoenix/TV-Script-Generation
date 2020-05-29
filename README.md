@@ -21,9 +21,6 @@ from collections import Counter
 
 
 ```python
-"""
-DON'T MODIFY ANYTHING IN THIS CELL
-"""
 # load in data
 import helper
 data_dir = './data/Seinfeld_Scripts.txt'
@@ -36,10 +33,6 @@ Play around with `view_line_range` to view different parts of the data. This wil
 
 ```python
 view_line_range = (0, 10)
-
-"""
-DON'T MODIFY ANYTHING IN THIS CELL THAT IS BELOW THIS LINE
-"""
 import numpy as np
 
 print('Dataset Stats')
@@ -108,10 +101,6 @@ def create_lookup_tables(text):
 
     return (vocab_to_int, int_to_vocab)
 
-
-"""
-DON'T MODIFY ANYTHING IN THIS CELL THAT IS BELOW THIS LINE
-"""
 tests.test_create_lookup_tables(create_lookup_tables)
 ```
 
@@ -156,10 +145,7 @@ def token_lookup():
     tokens['-'] = '<DASH>'
     tokens['\n'] = '<NEW_LINE>'
     return tokens 
-        
-"""
-DON'T MODIFY ANYTHING IN THIS CELL THAT IS BELOW THIS LINE
-"""
+
 tests.test_tokenize(token_lookup)
 ```
 
@@ -172,9 +158,6 @@ Running the code cell below will pre-process all the data and save it to file. Y
 
 
 ```python
-"""
-DON'T MODIFY ANYTHING IN THIS CELL
-"""
 # pre-process training data
 helper.preprocess_and_save_data(data_dir, token_lookup, create_lookup_tables)
 ```
@@ -184,9 +167,6 @@ This is your first checkpoint. If you ever decide to come back to this notebook 
 
 
 ```python
-"""
-DON'T MODIFY ANYTHING IN THIS CELL
-"""
 import helper
 import problem_unittests as tests
 
@@ -200,9 +180,6 @@ In this section, you'll build the components necessary to build an RNN by implem
 
 
 ```python
-"""
-DON'T MODIFY ANYTHING IN THIS CELL
-"""
 import torch
 
 # Check for a GPU
@@ -457,10 +434,6 @@ class RNN(nn.Module):
         
         return hidden
 
-
-"""
-DON'T MODIFY ANYTHING IN THIS CELL THAT IS BELOW THIS LINE
-"""
 tests.test_rnn(RNN, train_on_gpu)
 ```
 
@@ -519,9 +492,6 @@ def forward_back_prop(rnn, optimizer, criterion, inp, target, hidden):
     optimizer.step()
     return loss.item(), h
 
-"""
-DON'T MODIFY ANYTHING IN THIS CELL THAT IS BELOW THIS LINE
-"""
 tests.test_forward_back_prop(RNN, forward_back_prop, train_on_gpu)
 
 ```
@@ -539,10 +509,6 @@ The training loop is implemented for you in the `train_decoder` function. This f
 
 
 ```python
-"""
-DON'T MODIFY ANYTHING IN THIS CELL
-"""
-
 def train_rnn(rnn, batch_size, optimizer, criterion, n_epochs, show_every_n_batches=100):
     batch_losses = []
     
@@ -641,9 +607,6 @@ You should also experiment with different sequence lengths, which determine the 
 
 
 ```python
-"""
-DON'T MODIFY ANYTHING IN THIS CELL
-"""
 
 # create model and move to gpu if available
 rnn = RNN(vocab_size, output_size, embedding_dim, hidden_dim, n_layers, dropout=0.2)
@@ -779,9 +742,6 @@ After running the above training cell, your model will be saved by name, `traine
 
 
 ```python
-"""
-DON'T MODIFY ANYTHING IN THIS CELL
-"""
 import torch
 import helper
 import problem_unittests as tests
@@ -799,9 +759,6 @@ To generate the text, the network needs to start with a single word and repeat i
 
 
 ```python
-"""
-DON'T MODIFY ANYTHING IN THIS CELL THAT IS BELOW THIS LINE
-"""
 import torch.nn.functional as F
 
 def generate(rnn, prime_id, int_to_vocab, token_dict, pad_value, predict_len=100):
@@ -883,10 +840,6 @@ You can set the prime word to _any word_ in our dictionary, but it's best to sta
 # run the cell multiple times to get different results!
 gen_length = 400 # modify the length to your preference
 prime_word = 'jerry' # name for starting the script
-
-"""
-DON'T MODIFY ANYTHING IN THIS CELL THAT IS BELOW THIS LINE
-"""
 pad_word = helper.SPECIAL_WORDS['PADDING']
 generated_script = generate(trained_rnn, vocab_to_int[prime_word + ':'], int_to_vocab, token_dict, vocab_to_int[pad_word], gen_length)
 print(generated_script)
